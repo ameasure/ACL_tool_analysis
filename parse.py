@@ -60,8 +60,7 @@ def get_papers(pages, conference_doi):
             # add the tokens to our current paper
             tokens = word_tokenize(text)
             paper += tokens
-    # the end of the last paper won't be indicated by a conference_doi
-    # but we still want to save it
+    # the end of the last paper won't be indicated but we still want to save it
     papers.append(paper)      
     print('papers retrieved:', len(papers))
     return papers
@@ -82,7 +81,7 @@ def count_words(words, papers, match_case=False):
     for word in words:
         print(word, get_paper_count(word, papers, match_case))
         
-def run(input_dir=r'C:\Users\Alex Measure\Desktop\ACL test\extract'):
+def run(input_dir=r'C:\Users\Alex Measure\Desktop\ACL_analysis\extract'):
     files = [f for f in os.listdir(input_dir) if f.endswith('.xml')]
     for file in files:
         print('=' * 80)
